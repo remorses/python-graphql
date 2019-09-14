@@ -12,7 +12,7 @@ from .middleware import jwt_middleware
 from .scalars import *
 
 here = os.path.dirname(os.path.abspath(__file__))
-DB_URL = "mongodb://mongo:27017/playdb" or None
+DB_URL = os.getenv('DB_URL') or None
 
 def build(db):
     app = web.Application(middlewares=[jwt_middleware])
