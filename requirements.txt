@@ -1,1 +1,5 @@
 coloredlogs
+PyJWT
+tartiflette-aiohttp>=1.0.0
+tartiflette==1.0.0rc1
+aiohttp-cors
