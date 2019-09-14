@@ -1,6 +1,6 @@
-FROM python:3.7-alpine
+FROM python:3.7.2
 
-RUN apk  add --no-cache dumb-init # build-base
+RUN apt-get update && apt-get install -y dumb-init cmake bison flex git jq
 
 WORKDIR /src
 
@@ -10,6 +10,7 @@ RUN pip install -r requirements.txt
 
 COPY . /src/
 
-ENTRYPOINT ["dumb-init", "--"]
-CMD ["python", "-m", ""]
+
+ENTRYPOINT ["dumb-init", "--", ""]
+CMD ["python", "-m", "module"]
 
