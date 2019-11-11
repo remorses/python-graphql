@@ -1,6 +1,6 @@
-FROM python:3.7.2
+FROM python:3.7.4-alpine
 
-RUN apt-get update && apt-get install -y dumb-init cmake bison flex git jq
+RUN apk update && apk add --no-cache build-base libffi-dev dumb-init cmake bison flex
 
 WORKDIR /src
 
